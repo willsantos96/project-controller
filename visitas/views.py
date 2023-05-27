@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from visitas import models
 
-# Create your views here.
+def visitas (request):
+    return render(request, 'visitas/home.html')
