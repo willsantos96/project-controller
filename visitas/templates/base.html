@@ -1,11 +1,17 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/static/css/bootstrap.min.css' %}">
+
 </head>
 
 <body>
+
+
     <header>
         <!-- Conteúdo do cabeçalho -->
     </header>
@@ -22,6 +28,11 @@
     <footer>
         <!-- Conteúdo do rodapé -->
     </footer>
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
 </body>
 
 </html>
