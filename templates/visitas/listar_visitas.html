@@ -8,6 +8,13 @@
 
 <h1> Listar visitas </h1>
 
+{% for visitante in visitantes %}
+<!-- Exibir informações do visitante -->
+<p>{{ visitante.nome }}</p>
+<p>{{ visitante.email }}</p>
+<!-- Outras informações do visitante -->
+{% endfor %}
+
 
 
 
