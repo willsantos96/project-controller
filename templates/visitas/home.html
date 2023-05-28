@@ -12,10 +12,9 @@
 
 
 <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action"> Adicionar Visitas </a>
+    <a href="{% url 'visitas:add_visitas' %}" class="list-group-item list-group-item-action"> Adicionar Visitas </a>
     <a href="{% url 'visitas:listar_visitas' %}" class="list-group-item list-group-item-action"> Listar Visitas </a>
-    <a href="" class="list-group-item list-group-item-action"> Editar Visitas </a>
-    <a href="#" class="list-group-item list-group-item-action"> Excluir Visitas </a>
+    <a href="{% url 'visitas:excluir_visitas' %}" class="list-group-item list-group-item-action"> Excluir Visitas </a>
 </div>
 
 

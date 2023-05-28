@@ -8,7 +8,20 @@
 
 <h1>Adicionar visitas</h1>
 
+<form method="POST">
+    {% csrf_token %}
 
+    {{ form.as_p }}
+    <input type="submit" value="Cadastrar">
+</form>
+<br>
+<hr>
+
+
+
+
+
+<button> <a href="{% url 'visitas:home' %}"> Voltar </a></button>
 
 
 {% endblock %}

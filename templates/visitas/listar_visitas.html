@@ -13,11 +13,12 @@
 <hr>
 <p>{{ visitante.nome }}</p>
 <p>{{ visitante.telefone }}</p>
+<a href="{% url 'visitas:editar_visitas' visita_id=visitante.id %}">Editar</a>
 <hr>
 <!-- Outras informações do visitante -->
 {% endfor %}
 
-
+<button> <a href="{% url 'visitas:home' %}"> Voltar </a></button>
 
 
 {% endblock %}

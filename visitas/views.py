@@ -1,18 +1,28 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from visitas import models
 from .models import Visitante
+from .forms import VisitanteForm
 
 def visitas (request):
     return render(request, 'visitas/home.html')
 
 def add_visitas (request):
-    return render(request, 'visitas/add_visitas.html')
+    if request.method == 'POST':
+        form = VisitanteForm(request.POST)
+        if form.is_valid():
+            form.save()  # Salva o objeto Visitante no banco de dados
+            return redirect('visitas:listar_visitas')  # Redireciona para a página de listagem de visitas
+    else:
+        form = VisitanteForm()
+    
+    return render(request, 'visitas/add_visitas.html', {'form': form})
 
 def listar_visitas (request):
     visitantes = Visitante.objects.all()
     return render(request, 'visitas/listar_visitas.html', {'visitantes': visitantes})
 
 def editar_visitas (request, visita_id):
+    visitantes = Visitante.objects.all()
     # Recupera o visitante com o ID fornecido ou retorna um erro 404 se não encontrado
     visitante = get_object_or_404(Visitante, id=visita_id)
     if request.method == 'POST':

@@ -5,19 +5,26 @@
 {% block content %}
 <h1>Editar Visita</h1>
 
+
+
 <form method="POST" action="{% url 'visitas:editar_visitas' visita_id=visitantes.id %}">
     {% csrf_token %}
 
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" value="{{ visita.nome }}" required>
-
-    <label for="doc">Documento:</label>
-    <input type="text" id="doc" name="doc" value="{{ visita.doc }}" required>
-
-    <label for="telefone">Telefone:</label>
-    <input type="text" id="telefone" name="telefone" value="{{ visita.telefone }}" required>
-
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" placeholder="{{ visitantes.nome }}" value="{{ visita.nome }}" required>
+    <br>
+    <label for="doc">Documento:</label><br>
+    <input type="text" id="doc" name="doc" placeholder="{{ visitantes.doc }}" value="{{ visita.doc }}" required>
+    <br>
+    <label for="telefone">Telefone:</label><br>
+    <input type="text" id="telefone" name="telefone" placeholder="{{ visitantes.telefone }}"
+        value="{{ visita.telefone }}" required>
+    <br>
     <input type="submit" value="Salvar">
 </form>
+<br>
+
+<button> <a href="{% url 'visitas:home' %}"> Voltar </a></button>
+
 
 {% endblock %}
