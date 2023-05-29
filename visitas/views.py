@@ -30,13 +30,12 @@ def editar_visitas (request, visita_id):
         visitante.nome = request.POST['nome']
         visitante.doc = request.POST['doc']
         visitante.telefone = request.POST['telefone']
-        # Atualize outros campos conforme necessário
 
         # Salve as alterações no banco de dados
         visitante.save()
 
         # Redirecione para a página de listagem de visitantes ou para uma página de sucesso
-        return redirect('visitas:listar_visitas')
+        return redirect('visitas:editar_visitas',{'form': form})
 
     return render(request, 'visitas/editar_visitas.html', {'visitantes': visitante})
 
