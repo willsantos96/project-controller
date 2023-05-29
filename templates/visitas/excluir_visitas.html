@@ -6,9 +6,18 @@
 {% block content %}
 
 
-<h1> Excluir visitas </h1>
 
-<button> <a href="{% url 'visitas:home' %}"> Voltar </a></button>
+<h1>Excluir visita</h1>
+<hr>
+<p>Nome: {{ visitantes.nome }}</p>
+<p>Documento: {{ visitantes.doc }}</p>
+<p>Telefone: {{ visitantes.telefone }}</p>
+<hr>
+<form method="post" action="{% url 'visitas:excluir_visitas' visita_id=visitantes.id %}">
+    {% csrf_token %}
+    <input type="submit" value="Confirmar exclusão">
+</form>
+<button><a href="{% url 'visitas:listar_visitas' %}">Cancelar</a></button>
 
 
 {% endblock %}

@@ -9,13 +9,13 @@
 <h1> Listar visitas </h1>
 
 {% for visitante in visitantes %}
-<!-- Exibir informações do visitante -->
 <hr>
-<p>{{ visitante.nome }}</p>
-<p>{{ visitante.telefone }}</p>
+<p>Nome: {{ visitante.nome }}</p>
+<p>Documento: {{ visitante.doc }}</p>
+<p>Telefone: {{ visitante.telefone }}</p>
 <a href="{% url 'visitas:editar_visitas' visita_id=visitante.id %}">Editar</a>
+<a href="{% url 'visitas:excluir_visitas' visita_id=visitante.id %}">Excluir</a>
 <hr>
-<!-- Outras informações do visitante -->
 {% endfor %}
 
 <button> <a href="{% url 'visitas:home' %}"> Voltar </a></button>

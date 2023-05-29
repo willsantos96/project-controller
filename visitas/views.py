@@ -40,5 +40,11 @@ def editar_visitas (request, visita_id):
 
     return render(request, 'visitas/editar_visitas.html', {'visitantes': visitante})
 
-def excluir_visitas (request):
-    return render(request, 'visitas/excluir_visitas.html')
+def excluir_visitas (request, visita_id):
+    visitante = get_object_or_404(Visitante, pk=visita_id)
+
+    if request.method == 'POST':
+        visitante.delete()
+        return redirect('visitas:listar_visitas')
+
+    return render(request, 'visitas/excluir_visitas.html', {'visitantes': visitante})
