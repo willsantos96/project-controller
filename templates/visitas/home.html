@@ -7,15 +7,40 @@
 {% block content %}
 
 
-<h1>Bem vindo ao projeto</h1>
+<!-- Imagem e texto -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        Área de Visitante
+    </a>
+</nav>
 
 
 
-<div class="list-group">
-    <a href="{% url 'visitas:add_visitas' %}" class="list-group-item list-group-item-action"> Adicionar Visitas </a>
-    <a href="{% url 'visitas:listar_visitas' %}" class="list-group-item list-group-item-action"> Ver Visitas </a>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col">
+                <div class="list-group">
+                    <a href="{% url 'visitas:add_visitas' %}" class="list-group-item list-group-item-action"> Adicionar
+                        Visitas
+                    </a>
+                    <a href="{% url 'visitas:listar_visitas' %}" class="list-group-item list-group-item-action"> Ver
+                        Visitas
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                IMAGEM
+            </div>
+
+
+
+        </div>
+    </div>
 </div>
-
 
 
 
